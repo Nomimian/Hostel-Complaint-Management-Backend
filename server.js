@@ -14,10 +14,9 @@ connectDB();
 
 const app = express();
 app.use(cors({
-    origin: 'http://localhost:3000', // Allow requests from frontend
-    credentials: true, // Allow cookies & authentication headers
-  })
-);
+    origin: 'https://hostel-complaint-management-frontend.vercel.app',
+    credentials: true // if you're using cookies or sessions
+  }));
 app.use(express.json());
 app.use('/api/users', userRoutes);
 app.use('/api', searchRoutes);
