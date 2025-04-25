@@ -13,10 +13,16 @@ dotenv.config();
 connectDB();
 
 const app = express();
-app.use(cors({
+app.options('*', cors({
     origin: 'https://hostel-complaint-management-frontend.vercel.app',
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    credentials: true // if you're using cookies or sessions
+    credentials: true
+  }));
+  
+  app.use(cors({
+    origin: 'https://hostel-complaint-management-frontend.vercel.app',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true
   }));
 app.use(express.json());
 app.use('/api/users', userRoutes);
