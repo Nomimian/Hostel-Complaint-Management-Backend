@@ -4,7 +4,6 @@ const dotenv = require('dotenv');
 const userRoutes = require('./routes/userRoutes');
 const searchRoutes = require('./routes/searchRoutes');
 const complaintRoutes = require('./routes/complaintRoutes');
-const serverless = require('serverless-http');
 
 const connectDB = require('./db');
 
@@ -53,7 +52,5 @@ process.on('SIGINT', () => {
         });
     });
 });
-
-module.exports.handler = serverless(app);
 
 
