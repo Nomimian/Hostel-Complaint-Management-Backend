@@ -15,6 +15,7 @@ connectDB();
 const app = express();
 app.use(cors({
     origin: 'https://hostel-complaint-management-frontend.vercel.app',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true // if you're using cookies or sessions
   }));
 app.use(express.json());
